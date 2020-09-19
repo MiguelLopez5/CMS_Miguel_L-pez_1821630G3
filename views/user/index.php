@@ -1,6 +1,6 @@
 <h1>Lista de usuarios</h1>
 
-<a style="border: 2px solid #999999; border-radius: 5px; padding: 10px" href="?controller=user&method=create">Crear</a>
+<a style="border: 2px solid #999999; border-radius: 5px; padding: 10px" href="?controller=admin&method=createUser">Crear</a>
 <table class="table">
     <thead>
         <th>id</th>
@@ -15,7 +15,7 @@
             <td><?= $user->name ?></td>
             <td><?= $user->nameRole ?></td>
             <td width="200" class="table__options">
-                <a href="?controller=user&method=edit&id=<?= $user->id ?>">
+                <a href="?controller=admin&method=editUser&id=<?= $user->id ?>">
                     <button class="btn btn-outline-green">Editar</button>
                 </a>
                 <a href="?controller=user&method=delete&id=<?= $user->id ?>">
@@ -26,4 +26,3 @@
     <?php endforeach; ?>
     </tbody>
 </table>
-

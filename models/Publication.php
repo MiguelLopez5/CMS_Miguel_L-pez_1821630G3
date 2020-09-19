@@ -10,14 +10,24 @@
                 die($e->getMessage());
             }
         }
-        public function register($data, $url){
+        public function showOwn($autor){
+            try{
+                $resu = parent::connect()->prepare("SELECT * FROM publication AS p INNER JOIN users AS u ON p.id_user = u.id WHERE id_user=?");
+                $resu->bindParam(1, $autor, PDO::PARAM_INT);
+                $resu->execute();
+                return $resu->fetchAll();
+            }
+            catch(Exception $e){
+                die($e->getMessage());
+            }
+        }
+        public function register($data, $url, $autor){
             try{
                 $resu = parent::connect()->prepare("INSERT INTO publication (title, description, url_image, id_user) VALUES (?,?,?,?)");
                 $resu->bindParam(1, $data['titulo'], PDO::PARAM_STR);
                 $resu->bindParam(2, $data['descri'], PDO::PARAM_STR);
                 $resu->bindParam(3, $url, PDO::PARAM_STR);
-                $varsession=1;
-                $resu->bindParam(4, $varsession, PDO::PARAM_INT);
+                $resu->bindParam(4, $autor, PDO::PARAM_INT);
                 return $resu->execute();
             }
             catch(Exception $e){

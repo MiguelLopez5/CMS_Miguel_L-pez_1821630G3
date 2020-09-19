@@ -1,19 +1,11 @@
-<?php 
+<?php
     class publiController extends Publication{
-        public function indexAdmin(){                
-        require_once 'views/layouts/headerAdmin.php';
-        require_once 'views/publication/index.php';
-        require_once 'views/layouts/footer.php';
-        }
-
-        public function indexUser(){                
-            require_once 'views/layouts/headerUser.php';
-            require_once 'views/publication/index.php';
-            require_once 'views/layouts/footer.php';
+        public function index(){
+          require_once 'views/publication/index.php';
+          require_once 'views/layouts/footer.php';
         }
 
         public function create(){
-            require_once 'views/layouts/headerUser.php';
             require_once 'views/publication/create.php';
             require_once 'views/layouts/footer.php';
         }
@@ -21,14 +13,23 @@
             $nomima = $_FILES['imagen']['name'];
             $tipoima = $_FILES['imagen']['type'];
             $tamima = $_FILES['imagen']['size'];
-            $ubicacion = 'uploads/'.$nomima;       
+            $ubicacion = 'uploads/'.$nomima;
             move_uploaded_file($_FILES['imagen']['tmp_name'],$ubicacion);
-            echo parent::register($_POST, $ubicacion) ? header('Location: ?controller=publi&method=indexUser') : 'Error en el registro';
-                
+            $idautor=$_SESSION['user']->id;
+            if (parent::register($_POST, $ubicacion, $idautor)) {
+              if($_SESSION['user']->id_role=="1"){
+                header('Location: ?controller=admin&method=viewPublication');
+              }
+              elseif ($_SESSION['user']->id_role=="2") {
+                header('Location: ?controller=teacher&method=viewPublication');
+              }
+            }
+            else {
+              echo 'Error en el registro';
+            }
         }
         public function edit(){
             $publi = parent::search($_GET['idpub']);
-            require_once 'views/layouts/headerUser.php';
             require_once 'views/publication/edit.php';
             require_once 'views/layouts/footer.php';
         }
@@ -38,10 +39,30 @@
             $tamima = $_FILES['imagen']['size'];
             $ubicacion = 'uploads/'.$nomima;
             move_uploaded_file($_FILES['imagen']['tmp_name'],$ubicacion);
-            echo parent::update_data($_POST, $ubicacion) ? header('Location: ?controller=publi&method=indexUser') : 'Error al actualizar los datos';
+            if (parent::update_data($_POST, $ubicacion)) {
+              if($_SESSION['user']->id_role=="1"){
+                header('Location: ?controller=admin&method=viewPublication');
+              }
+              elseif ($_SESSION['user']->id_role=="2") {
+                header('Location: ?controller=teacher&method=viewPublication');
+              }
+            }
+            else {
+              echo 'Error al actualizar los datos';
+            }
         }
         public function delete(){
-            echo parent::delete_data($_GET['idpub']) ? header('Location: ?controller=publi&method=indexUser') : 'Error al eliminar';
+            if (parent::delete_data($_GET['idpub'])) {
+              if($_SESSION['user']->id_role=="1"){
+                header('Location: ?controller=admin&method=viewPublication');
+              }
+              elseif ($_SESSION['user']->id_role=="2") {
+                header('Location: ?controller=teacher&method=viewPublication');
+              }
+            }
+            else {
+              echo 'Error al eliminar';
+            }
         }
     }
 ?>

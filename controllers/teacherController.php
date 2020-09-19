@@ -1,8 +1,7 @@
 <?php
-    class adminController extends Security{
+    class teacherController extends Security{
         public $rolereq;
         public function __construct(){
-            parent::verifySession();
             $this->rolereq = 2;
             parent::verifyRole($this->rolereq);
         }
@@ -13,15 +12,15 @@
         }
         public function viewPublication(){
             require_once 'views/teacher/header.php';
-            header("Refresh:0; url=?controller=publi");
+            call_user_func(["publiController", "index"]);
         }
         public function createPublication(){
             require_once 'views/teacher/header.php';
-            header("Refresh:0; url=?controller=publi&method=create")
+            call_user_func(["publiController", "create"]);
         }
         public function editPublication(){
             require_once 'views/teacher/header.php';
-            header("Refresh:0; url=?controller=publi&method=edit")
+            call_user_func(["publiController", "edit"]);
         }
     }
 ?>

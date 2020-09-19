@@ -12,8 +12,8 @@
 <body>
     <nav class="navbar">
         <a href="?controller=index" class="navbar-brand">CMS Ejemplo</a>
-        <ul class="navbar-nav" style="display: flex">
-            <li><a class="nav-link" href="?controller=publi&method=indexUser">Publicaciones</a></li>
+        <ul class="navbar-nav" style="display: flex;">
+            <li><a class="nav-link" href="?controller=teacher&method=viewPublication">Mis publicaciones</a></li>
             <li><a class="nav-link" href="?controller=security&method=logout">Salir</a></li>
         </ul>
     </nav>

@@ -40,21 +40,32 @@
 </style>
 <div class="drum">
     <h1>Publicaciones</h1>
-    <a class="link" href="?controller=publi&method=create">Nueva publicación</a>
+    <?php
+      if($_SESSION['user']->id_role=="1"){
+    ?>
+    <a class="link" href="?controller=admin&method=createPublication">Nueva publicación</a>
+    <?php
+      }
+      elseif ($_SESSION['user']->id_role=="2") {
+    ?>
+        <a class="link" href="?controller=teacher&method=createPublication">Nueva publicación</a>
+    <?php
+      }
+    ?>
 </div>
 
 <div class="org">
     <?php
-        foreach(parent::show() as $publi):
+        foreach(parent::showOwn($_SESSION['user']->id) as $publi):
     ?>
     <div class="ind">
         <p><?= $publi->idP ?></p>
         <p><?= $publi->title ?></p>
         <p><?= $publi->description ?></p>
-        <p class="imagen"><img src="<?= $publi->url_image ?>" alt="Imagen de lapublicación"></p>
+        <p class="imagen"><img src="<?= $publi->url_image ?>" alt="Imagen de la publicación"></p>
         <p><?= $publi->name ?></p>
         <p>
-            <a href="?controller=publi&method=edit&idpub=<?= $publi->idP ?>">
+            <a href="?controller=admin&method=editPublication&idpub=<?= $publi->idP ?>">
                 <button class="btn btn-outline-green">Editar</button>
             </a>
             <a href="?controller=publi&method=delete&idpub=<?= $publi->idP ?>">
@@ -64,4 +75,3 @@
     </div>
     <?php endforeach; ?>
 </div>
-

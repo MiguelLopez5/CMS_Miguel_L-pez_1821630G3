@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2019 a las 19:06:49
+-- Tiempo de generación: 08-10-2019 a las 16:59:03
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -43,8 +43,10 @@ CREATE TABLE `publication` (
 --
 
 INSERT INTO `publication` (`idP`, `title`, `description`, `url_image`, `id_user`) VALUES
-(7, 'Semana cultural', 'Lorem ipsum pater noster qi es in caelo santifiqeu sem voce', 'uploads/Captura de pantalla (1).png', 1),
-(8, 'Actividades de semana', ' el dia x de nosecuantos del dosmily se llevo a cabo z evento donde paso esto y aquello', 'uploads/new_paisaje.jpg', 1);
+(7, 'Semana cultural', 'Lorem ipsum pater noster qi es in caelo santifiqeu sem voce', 'uploads/Captura de pantalla (1).png', 13),
+(10, 'Mas allá del jardin', 'No me acuerdo la fecha pero en cn se estreno una serie llamada \"Más allá del jardín en donde dos hermanos rarucos experimentan aventuras extraordinarias', 'uploads/primero.jpg', 12),
+(18, 'Ter Stegen', '  Publiger terberntre ie fheri goierh toierht goeirhtuibe turty', 'uploads/random image.jpg', 12),
+(19, 'Actividades de semana', 'un nuevo paisaje para la comunidad pepito perezista que nos ha acompañado durante estos largos x años muchas gracias a todos', 'uploads/new_paisaje.jpg', 13);
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `publication`
 --
 ALTER TABLE `publication`
-  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idP` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -136,7 +138,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Restricciones para tablas volcadas

@@ -10,10 +10,10 @@
 			if(password_verify($_POST['pass'], $userinfo->password)){
 				$_SESSION['user'] = $userinfo;
 				if ($userinfo->id_role==1){
-					header('Location:?controller=user&method=index');
+					header('Location:?controller=admin&method=index');
 				}
 				else if($userinfo->id_role==2){
-					header('Location:?controller=publi&method=indexUser');
+					header('Location:?controller=teacher&method=index');
 				}
 			}
 			else{

@@ -14,11 +14,24 @@
 		}
 
 		public static function verifySession(){
-			if(!isset($_SESSION['user'])) header("Location: ?method=login");
+			if(!isset($_SESSION['user'])){
+				header("Location: ?method=login");
+			}
+		}
+
+		public function sessionStarted(){
+			if(isset($_SESSION['user'])) {
+				if ($_SESSION['user']->id_role=="1") {
+					header('Location:?controller=admin&method=index');
+				}
+				elseif ($_SESSION['user']->id_role=="2") {
+					header('Location:?controller=teacher&method=index');
+				}
+			}
 		}
 
 		public function verifyRole($role){
-			if (!$role == $_SESSION['user']['id_role']) header("Location: ?method=login");
+			if ($role != $_SESSION['user']->id_role) header("Location: ?method=login");
 		}
 	}
 ?>

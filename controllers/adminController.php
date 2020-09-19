@@ -1,10 +1,8 @@
 <?php
     class adminController extends Security{
-        public $rolereq;
         public function __construct(){
-            parent::verifySession();
-            $this->rolereq = 1;
-            parent::verifyRole($this->rolereq);
+            $rolereq = "1";
+            parent::verifyRole($rolereq);
         }
         public function index(){
             require_once 'views/admin/header.php';
@@ -13,27 +11,27 @@
         }
         public function viewUser(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=user");
+            call_user_func(["userController", "index"]);
         }
         public function createUser(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=user&method=create");
+            call_user_func(["userController", "create"]);
         }
         public function editUser(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=user&method=edit");
+            call_user_func(["userController", "edit"]);
         }
         public function viewPublication(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=publi");
+            call_user_func(["publiController", "index"]);
         }
         public function createPublication(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=publi&method=create")
+            call_user_func(["publiController", "create"]);
         }
         public function editPublication(){
             require_once 'views/admin/header.php';
-            header("Refresh:0; url=?controller=publi&method=edit")
+            call_user_func(["publiController", "edit"]);
         }
     }
 ?>

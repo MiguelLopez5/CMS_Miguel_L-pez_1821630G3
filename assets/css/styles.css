@@ -95,26 +95,26 @@ body{
     position: relative;
 }
 
-    .nav-link::after{
-        content: '';
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        background: #fff;
-        left: 100%;
-        bottom: -4px;
-        transition: .5s ease;
-    }
+.nav-link::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    left: 100%;
+    bottom: -4px;
+    transition: .5s ease;
+}
 
-    .nav-link:hover{
-        opacity: 1;
-    }
+.nav-link:hover{
+    opacity: 1;
+}
 
-        .nav-link:hover::after{
-            width: 100%;
-            left: 0;
-            transition: .5s ease;
-        }
+.nav-link:hover::after{
+    width: 100%;
+    left: 0;
+    transition: .5s ease;
+}
 
 /**
     Fonts styles
@@ -146,22 +146,22 @@ p{
     cursor: pointer;
 }
 
-    .btn:hover{
-        transform: translateY(-1px);
-        box-shadow: 0 5px 5px #00000014;
-    }
+.btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 5px 5px #00000014;
+}
 
-    .btn-outline-green{
-        border: 1px solid var(--green);
-        color: #fff;
-        background: var(--green);
-    }
+.btn-outline-green{
+    border: 1px solid var(--green);
+    color: #fff;
+    background: var(--green);
+}
 
-    .btn-outline-red{
-        background: transparent;
-        border: transparent;
-        color: var(--red);
-    }
+.btn-outline-red{
+    background: transparent;
+    border: transparent;
+    color: var(--red);
+}
 
 
 
@@ -177,23 +177,23 @@ p{
     background: #fff;
 }
 
-    .table td, .table thead th{
-        padding: 12px 8px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.11);
-    }
+.table td, .table thead th{
+    padding: 12px 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+}
 
-    .table thead th{
-        color: var(--secondary);
-        text-transform: uppercase;
-    }
+.table thead th{
+    color: var(--secondary);
+    text-transform: uppercase;
+}
 
-    .table tbody tr:hover{
-        background: rgba(0, 0, 0, 0.11);
-    }
-    
-    .table__options{
-        text-align: center;
-    }
+.table tbody tr:hover{
+    background: rgba(0, 0, 0, 0.11);
+}
+
+.table__options{
+    text-align: center;
+}
 
 
 .panel{
@@ -202,7 +202,7 @@ p{
     box-shadow: 0 5px 5px #0000000f;
 }
 
-    .panel:hover{
-        transform: translateY(-5px);
-    }
+.panel:hover{
+    transform: translateY(-5px);
+}
 

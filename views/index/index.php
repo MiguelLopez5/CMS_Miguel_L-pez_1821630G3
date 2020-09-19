@@ -38,7 +38,7 @@
 
 	<div class="org">
 	    <?php
-	        foreach(parent::show() as $publi):
+	        foreach($consulta as $publi):
 	    ?>
 	    <div class="ind">
 	        <p><?= $publi->title ?></p>

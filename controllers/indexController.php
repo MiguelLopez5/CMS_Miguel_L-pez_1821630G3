@@ -1,6 +1,6 @@
 <?php
 
-class indexController extends Publication{
+class indexController extends Security{
 
     /**
      * Función que se ejecuta siempre que se crea un objeto.
@@ -15,6 +15,7 @@ class indexController extends Publication{
      * Principalmente casi siempre se retorna una vista con una tabla para mostrar todos los registros. (Esto depende de la necesidad del cliente)
      */
     public function index(){
+        $consulta=call_user_func(["publication","show"]);
         require_once 'views/layouts/header.php';
         require_once 'views/index/index.php';
         require_once 'views/layouts/footer.php';
@@ -56,6 +57,7 @@ class indexController extends Publication{
     }
 
     public function login(){
+        parent::sessionStarted();
         require_once 'views/layouts/header.php';
         require_once 'views/index/login.php';
         require_once 'views/layouts/footer.php';

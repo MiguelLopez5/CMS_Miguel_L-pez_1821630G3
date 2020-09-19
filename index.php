@@ -28,6 +28,17 @@ $method = isset($_GET['method']) ? $_GET['method'] : 'index';
  * require_once =
  */
 
+/*Descomentar
+spl_autoload_register(function($class){
+    if(file_exists("controllers/{$class}.php")){
+        require_once "controllers/{$class}.php";
+    }else if(file_exists("models/{$class}.php")){
+        require_once "models/{$class}.php";
+    }else{
+        die('The file no exists.');
+    }
+});*/
+
 require_once "models/Database.php";
 require_once "models/Publication.php";
 require_once "models/Security.php";
@@ -37,8 +48,12 @@ require_once "controllers/indexController.php";
 require_once "controllers/publiController.php";
 require_once "controllers/userController.php";
 require_once "controllers/securityController.php";
+require_once "controllers/adminController.php";
+require_once "controllers/teacherController.php";
 
-call_user_func(["{$controller}Controller", $method]);
+$controller = "{$controller}Controller";
+$controller = new $controller();
+call_user_func([$controller, $method]);
 
 /**
  * Maneras de concatenar variables.
