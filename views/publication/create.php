@@ -1,14 +1,14 @@
-
-<form action="?controller=publi&method=store" method="POST" enctype="multipart/form-data">
+<form class="form w-80 mx-auto" action="?controller=publi&method=store" method="POST" enctype="multipart/form-data">
+	<legend>Crear publicación</legend>
 	<label for="titulo">Titulo</label>
-	<input style="border: 2px solid #494949;" type="text" name="titulo" id="titulo" required>
+	<input class="form-control" type="text" name="titulo" id="titulo" required>
 	<br><br>
 	<label for="descrip">Descripción</label>
 	<br>
-	<textarea style="border: 2px solid #494949;" cols="100" rows="20" name="descri" id="descrip" required> Publicacion...</textarea>
+	<textarea class="form-control" name="descri" id="descrip" required placeholder="Escribe aqui el texto de la publicacion..."></textarea>
 	<br>
 	<label for="imagen">Imagen</label>
-	<input style="border: 2px solid #494949;" type="file" name="imagen" id="imagen" required>
+	<input class="form-control" type="file" name="imagen" id="imagen" required>
 	<br><br>
-	<input class="btn btn-green" type="submit" value="Registrar">
+	<input class="btn btn-green w-100" type="submit" value="Registrar">
 </form>

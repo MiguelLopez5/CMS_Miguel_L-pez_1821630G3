@@ -55,12 +55,8 @@ html{
 body{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     width: 100%;
+    min-height: 100vh;
     overflow-x: hidden;
-}
-
-.container, .navbar{
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 
@@ -135,7 +131,7 @@ p{
 }
 
 /**
-    Bottoms styles
+    Buttons styles
  */
 
 .btn{
@@ -151,16 +147,95 @@ p{
     box-shadow: 0 5px 5px #00000014;
 }
 
-.btn-outline-green{
+.btn-primary{
+    border: 1px solid var(--primary);
+    color: #fff;
+    background: var(--primary);
+}
+
+.btn-secondary{
+    border: 1px solid var(--secondary);
+    color: #fff;
+    background: var(--secondary);
+}
+
+.btn-third{
+    border: 1px solid var(--third);
+    color: #fff;
+    background: var(--third);
+}
+
+.btn-green{
     border: 1px solid var(--green);
     color: #fff;
     background: var(--green);
 }
 
+.btn-red{
+    border: 1px solid var(--red);
+    color: #fff;
+    background: var(--red);
+}
+
+.btn-black{
+    border: 1px solid var(--black);
+    color: #fff;
+    background: var(--black);
+}
+
+.btn-outline-primary{
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline-primary:hover{ 
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-outline-secondary{
+    background: transparent;
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+
+.btn-outline-secondary:hover{
+    background: var(--secondary);
+    color: #fff;
+}
+
+.btn-outline-third{
+    background: transparent;
+    border: 1px solid var(--third);
+    color: var(--third);
+}
+
+.btn-outline-third:hover{
+    background: var(--third);
+    color: #fff;
+}
+
+.btn-outline-green{
+    background: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+}
+
+.btn-outline-green:hover{
+    background: var(--green);
+    color: #fff;
+}
+
 .btn-outline-red{
     background: transparent;
-    border: transparent;
+    border: 1px solid var(--red);
     color: var(--red);
+}
+
+.btn-outline-red:hover{
+    background: var(--red);
+    color: #fff;
 }
 
 
@@ -206,3 +281,224 @@ p{
     transform: translateY(-5px);
 }
 
+
+/**
+    General styles of forms
+ */
+
+.form{
+    border-radius: 5px;
+    box-shadow: 0 5px 5px #0000000f;
+    padding: 20px;
+}
+
+.form label{
+    font-size: 14pt;
+}
+
+.form legend{
+    font-size: 20pt;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.form textarea{
+    max-width: 100%;
+    min-height: 350px;
+}
+
+.form-control{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #DEDEDE;
+    border-radius: 5px;
+    font-size: 12pt;
+}
+
+
+/**
+    Spacing and sizing (box-model) styles
+ */
+
+.w-100{ width: 100%; }
+.w-90{ width: 90%; }
+.w-80{ width: 80%; }
+.w-70{ width: 70%; }
+.w-60{ width: 60%; }
+.w-50{ width: 50%; }
+.w-40{ width: 40%; }
+.w-30{ width: 30%; }
+.w-20{ width: 20%; }
+.w-10{ width: 10%; }
+
+
+.p-1, .pt-1, .py-1{ padding-top: 10px; }
+.p-1, .pr-1, .px-1{ padding-right: 10px; }
+.p-1, .pb-1, .py-1{ padding-bottom: 10px; }
+.p-1, .pl-1, .px-1{ padding-left: 10px; }
+
+.p-2, .pt-2, .py-2{ padding-top: 20px; }
+.p-2, .pr-2, .px-2{ padding-right: 20px; }
+.p-2, .pb-2, .py-2{ padding-bottom: 20px; }
+.p-2, .pl-2, .px-2{ padding-left: 20px; }
+
+.p-3, .pt-3, .py-3{ padding-top: 30px; }
+.p-3, .pr-3, .px-3{ padding-right: 30px; }
+.p-3, .pb-3, .py-3{ padding-bottom: 30px; }
+.p-3, .pl-3, .px-3{ padding-left: 30px; }
+
+.p-4, .pt-4, .py-4{ padding-top: 40px; }
+.p-4, .pr-4, .px-4{ padding-right: 40px; }
+.p-4, .pb-4, .py-4{ padding-bottom: 40px; }
+.p-4, .pl-4, .px-4{ padding-left: 40px; }
+
+.p-5, .pt-5, .py-5{ padding-top: 50px; }
+.p-5, .pr-5, .px-5{ padding-right: 50px; }
+.p-5, .pb-5, .py-5{ padding-bottom: 50px; }
+.p-5, .pl-5, .px-5{ padding-left: 50px; }
+
+
+.m1, .mt-1, .my-1{ margin-top: 10px; }
+.m1, .mr-1, .mx-1{ margin-right: 10px; }
+.m1, .mb-1, .my-1{ margin-bottom: 10px; }
+.m1, .ml-1, .mx-1{ margin-left: 10px; }
+
+.m-2, .mt-2, .my-2{ margin-top: 20px; }
+.m-2, .mr-2, .mx-2{ margin-right: 20px; }
+.m-2, .mb-2, .my-2{ margin-bottom: 20px; }
+.m-2, .ml-2, .mx-2{ margin-left: 20px; }
+
+.m-3, .mt-3, .my-3{ margin-top: 30px; }
+.m-3, .mr-3, .mx-3{ margin-right: 30px; }
+.m-3, .mb-3, .my-3{ margin-bottom: 30px; }
+.m-3, .ml-3, .mx-3{ margin-left: 30px; }
+
+.ml-auto, .mx-auto{ margin-left: auto; }
+.mr-auto, .mx-auto{ margin-right: auto; }
+
+
+.b-1{ border: 1px solid var(--primary); }
+
+.bb-2{ border-bottom: 2px solid var(--primary); }
+
+.b-primary{ border-color: var(--primary); }
+.b-secondary{ border-color: var(--secondary); }
+.b-third{ border-color: var(--third); }
+
+
+
+/**
+    Grid styles
+ */
+.d-grid{
+    display: grid;
+    align-items: flex-start;
+}
+
+.grid-item{
+    width: 95%;
+    height: auto;
+}
+
+
+
+/**
+    Card styles
+ */
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.card img{
+    width: 100%;
+    height: auto;
+}
+
+
+/**
+    Flexbox styles
+ */
+
+.d-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.fx-center{ justify-content: center; }
+
+.fy-center{ align-items: center; }
+
+
+/**
+    Background and text color styles
+ */
+.bg-primary{ background: var(--primary); }
+.bg-secondary{ background: var(--secondary); }
+.bg-third{ background: var(--third); }
+.bg-green{ background: var(--green); }
+.bg-red{ background: var(--red); }
+.bg-black{ background: var(--black); }
+
+.color-primary{ color: var(--primary); }
+.color-secondary{ color: var(--secondary); }
+.color-third{ color: var(--third); }
+.color-green{ color: var(--green); }
+.color-red{ color: var(--red); }
+.color-black{ color: var(--black); }
+
+
+/**
+    Media queries
+ */
+
+@media only screen and (max-width: 2560px){
+    .container, .navbar{
+        padding: 0 20%;
+    }
+
+    .grid-columns-xl-5{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width: 1366px){
+    .container, .navbar{
+        padding: 0 10%;
+    }
+
+    .grid-columns-l-4{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .container, .navbar{
+        padding: 0 5%;
+    }
+
+    .grid-columns-m-3{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .grid-columns-s-2{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .container, .navbar{
+        padding: 0 5%;
+    }
+
+    .grid-columns-xs-1{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

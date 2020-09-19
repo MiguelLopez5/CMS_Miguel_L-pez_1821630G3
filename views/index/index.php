@@ -1,50 +1,16 @@
-<style>
-    .drum{
-        width: 100%;
-        display: flex;
-        border-bottom: 2px solid #FAFAFA;
-        padding: 4%;
-    }
-    h1{
-        width: 75%;
-    }
-    .link{
-        border: 2px solid #FAFAFA;
-    }
-    .org{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        justify-content: center;
-        align-items: center;
-    }
-    .ind{
-        display: flex;
-        flex-direction: column;
-        width: 90%;
-        height: 95%;
-        padding: 4%;
-    }
-    img{
-        height: 100%;
-        width: 50%;
-    }
-    .imagen{
-        text-align: center;
-    }
-</style>
-	<div class="drum">
+	<div class="w-100">
 	    <h1>Publicaciones</h1>
 	</div>
 
-	<div class="org">
+	<div class="d-grid grid-columns-xl-5 grid-columns-l-4 grid-columns-m-3 grid-columns-s-2 grid-columns-xs-1">
 	    <?php
 	        foreach($consulta as $publi):
 	    ?>
-	    <div class="ind">
-	        <p><?= $publi->title ?></p>
-	        <p><?= $publi->description ?></p>
-	        <p class="imagen"><img src="<?= $publi->url_image ?>" alt="Imagen de lapublicación"></p>
-	        <p><?= $publi->name ?></p>
+	    <div class="grid-item card mx-auto mb-1">
+	        <h3><?= $publi->title ?></h3>
+	        <p class="mb-1"><?= $publi->description ?></p>
+	        <p class="mb-1"><img src="<?= $publi->url_image ?>" alt="Imagen_de_la_publicación"></p>
+	        <p><b><?= $publi->name ?></b></p>
 	    </div>
 	    <?php endforeach; ?>
 	</div>
